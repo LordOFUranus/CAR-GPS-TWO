@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RegistrationActivity">
+
+    <TextView
+            android:text="Регистрация"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView2"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="40dp"
+            app:layout_constraintHorizontal_bias="0.495" android:textSize="48sp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edt_fn"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" android:layout_marginTop="44dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" android:hint="Имя"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edt_ln" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/edt_fn"
+            android:layout_marginTop="48dp" app:layout_constraintHorizontal_bias="0.502" android:hint="Фамилия"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
+            android:id="@+id/edt_phone"
+            app:layout_constraintTop_toBottomOf="@+id/edt_ln" android:layout_marginTop="48dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:hint="Телефон"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edt_iid"
+            app:layout_constraintTop_toBottomOf="@+id/edt_phone" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="48dp"
+            app:layout_constraintHorizontal_bias="0.497" android:hint="ИИН"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/edt_reg_pass"
+            app:layout_constraintTop_toBottomOf="@+id/edt_iid" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="48dp"
+            app:layout_constraintHorizontal_bias="0.497" android:hint="Пароль"/>
+    <Button
+            android:text="Зарегистрироваться"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btn_end_reg"
+            app:layout_constraintTop_toBottomOf="@+id/edt_reg_pass" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.498" app:layout_constraintVertical_bias="0.206"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
