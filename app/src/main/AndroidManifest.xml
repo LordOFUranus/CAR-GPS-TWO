@@ -20,6 +20,9 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+                android:name=".Log"
+                android:exported="true"/>
+        <activity
                 android:name=".RegistrationActivity"
                 android:exported="true"/>
         <activity

@@ -36,8 +36,17 @@
                     android:id="@+id/btn_point_map"
                     android:textSize="8sp"
                     map:layout_constraintStart_toEndOf="@+id/sw_gps_map"
-                    android:layout_marginStart="28dp" map:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginTop="2dp"/>
+                    android:layout_marginStart="16dp" map:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="4dp"/>
+            <Button
+                    android:text="Лог"
+                    android:layout_width="66dp"
+                    android:layout_height="37dp"
+                    android:id="@+id/btn_log_map"
+                    android:textSize="8sp"
+                    map:layout_constraintStart_toEndOf="@+id/btn_point_map"
+                    map:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="4dp" android:layout_marginStart="8dp"/>
             <TextView
                     android:text="Местоположение:"
                     android:layout_width="wrap_content"

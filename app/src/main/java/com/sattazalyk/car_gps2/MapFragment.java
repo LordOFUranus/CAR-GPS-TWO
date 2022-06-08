@@ -1,6 +1,7 @@
 package com.sattazalyk.car_gps2;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -46,7 +47,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
 
     SupportMapFragment mapFragment;
 
-    private Button btn_point_map;
+    private Button btn_point_map, btn_log_map;
     private TextView tv_geocode, tv_pointcounter_map, tv_user_name;
     private Switch sw_locationupdates, sw_gps;
 
@@ -95,6 +96,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
         sw_gps = view.findViewById(R.id.sw_gps_map);
         sw_locationupdates = view.findViewById(R.id.sw_locationsupdates_map);
         btn_point_map = view.findViewById(R.id.btn_point_map);
+        btn_log_map = view.findViewById(R.id.btn_log_map);
     }
 
     private void initializationLocationRequest() {
@@ -153,6 +155,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
             locationLogList = gps_data.getLocationPoints();
             locationLogList.add(locationLog);
             updateGPS();
+        });
+
+        btn_log_map.setOnClickListener(view1 -> {
+            Intent intent = new Intent(getActivity(), Log.class);
+            startActivity(intent);
         });
 
         GPS_Data gps_data = (GPS_Data) getActivity().getApplicationContext();
@@ -264,6 +271,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
 
         GPS_Data gps_data = (GPS_Data) getActivity().getApplicationContext();
         locationLogList = gps_data.getLocationPoints();
+        for (Location l : locationLogList) {
+            LatLng latLng = new LatLng(l.getLatitude(), l.getLongitude());
+            MarkerOptions markerOptions = new MarkerOptions();
+            markerOptions.position(latLng);
+            markerOptions.title("Lat: " + l.getLatitude() + " Lon: " + l.getLongitude() + " #" + locationLogList.indexOf(l) + 1);
+            mMap.addMarker(markerOptions);
+        }
+
         tv_pointcounter_map.setText(Integer.toString(locationLogList.size()));
 
     }
@@ -272,13 +287,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        for (Location l : locationLogList) {
-            LatLng latLng = new LatLng(l.getLatitude(), l.getLongitude());
-            MarkerOptions markerOptions = new MarkerOptions();
-            markerOptions.position(latLng);
-            markerOptions.title("Lat: " + l.getLatitude() + " Lon: " + l.getLongitude() + " #" + locationLogList.indexOf(l) + 1);
-            mMap.addMarker(markerOptions);
-        }
 
     }
 
