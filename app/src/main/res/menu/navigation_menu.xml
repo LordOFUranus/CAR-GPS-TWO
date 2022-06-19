@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_menu_profile"
+          android:icon="@drawable/user_standart_round"
+          android:title="Профиль"/>
+    <item android:id="@+id/nav_menu_race"
+          android:title="Рейсы"
+          android:icon="@drawable/truck_icon"/>
+    <item android:id="@+id/nav_menu_users"
+          android:title="Пользователи"
+          android:icon="@drawable/community_icon"/>
+    <item android:id="@+id/nav_menu_message"
+          android:title="Сообщения"
+          android:icon="@drawable/message_icon"
+    />
+    <item android:id="@+id/nav_menu_others"
+          android:title="Системное"
+          android:icon="@drawable/system_icon">
+        <menu>
+            <item android:id="@+id/nav_menu_settings"
+                  android:title="Настройки-GPS-DEBUG"
+                  android:icon="@drawable/gps_debug_icon"/>
+            <item android:id="@+id/nav_menu_support"
+                  android:title="Поддержка"
+                  android:icon="@drawable/support_icon"/>
+            <item android:id="@+id/nav_menu_exit"
+                  android:icon="@drawable/exit_icon"
+                  android:title="Выход"/>
+        </menu>
+
+    </item>
+
+</menu>

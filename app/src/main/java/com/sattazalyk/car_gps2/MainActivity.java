@@ -1,14 +1,23 @@
 package com.sattazalyk.car_gps2;
 
+import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     private Button btn_frag_map, btb_frag_feed, btb_wv;
     private Toolbar tb_main;
+    private NavigationView nv_main;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,8 +27,12 @@ public class MainActivity extends AppCompatActivity {
         btb_frag_feed = findViewById(R.id.btn_news);
         btb_frag_feed.setClickable(false);
         btb_wv = findViewById(R.id.btn_wv);
-
         tb_main = findViewById(R.id.tb_main);
+        nv_main = findViewById(R.id.nv_main);
+        nv_main.setItemIconTintList(null);
+
+        /*NavController navController = Navigation.findNavController(this,R.id.fragment);
+        NavigationUI.setupWithNavController(nv_main,navController);*/
 
         feed_fragment feedFragment = new feed_fragment();
         FragmentTransaction StartTransaction = getSupportFragmentManager().beginTransaction();

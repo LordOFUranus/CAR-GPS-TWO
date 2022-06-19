@@ -19,7 +19,6 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder>{
     private ArrayList<Post> posts;
 
     public FeedAdapter(ArrayList<Post> posts) {
-
         this.posts = posts;
     }
 
@@ -41,6 +40,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
+
         return posts.size();
     }
 
